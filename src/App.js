@@ -21,7 +21,7 @@ class App extends React.Component {
         this.props.uploadDataToStore("prices");
         this.props.uploadDataToStore("categories");
 
-        if (localStorage.length === 0) {
+        if (localStorage.cartInfo === undefined) {
             localStorage.setItem(`cartInfo`, JSON.stringify([])); // if localstorage is empty
         } else {
             this.props.updateCart(JSON.parse(localStorage.getItem('cartInfo'))); // otherwise copy localstorage into the state
